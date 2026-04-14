@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales (venv)
+venv/
+.env/
+
+# Variables de entorno (Secretos y configuraciones locales)
+.env
+.venv
+
+# Streamlit
+.streamlit/config.toml
+.streamlit/secrets.toml
+
+# Archivos del Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store
