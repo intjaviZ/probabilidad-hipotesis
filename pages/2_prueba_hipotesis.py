@@ -1,6 +1,7 @@
 import streamlit as st
 from services.resumen_estadistico import resumen_estadistico
 from services.hipotesis import z_test
+from services.guardar_estadisticas import guardar_estadisticas
 from plots.hipotesis_plot import plot_z_curve
 
 st.title("Prueba de hipótesis (Z)")
@@ -64,6 +65,16 @@ if "data" in st.session_state and st.session_state['variables']['candidatas_cont
         st.divider()
         fig = plot_z_curve(result["z"], alpha, test_type)
         st.plotly_chart(fig, use_container_width=True)
+        
+        # Actualizar estado con todas las estadísticas
+        st.session_state["estadisticas"] = guardar_estadisticas(
+            col=variable_seleccionada,
+            resumen=resumen,
+            result=result,
+            alpha=alpha,
+            mu0=mu0,
+            test_type=test_type
+        )
         
         st.subheader("Interpretación y contexto")
 

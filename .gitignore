@@ -22,3 +22,6 @@ Desktop.ini
 
 *.csv
 *.xlsx
+
+.streamlit
+.streamlit/
