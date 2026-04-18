@@ -38,10 +38,10 @@ def main():
     st.header("Carga de datasets")
     
     col1, col2 = st.columns(2, vertical_alignment="top", gap="medium", border=True)
-    with col1:    
+    with col1:
         file = st.file_uploader(label="Set de datos", type=["csv", "xlsx"])
     with col2:
-        datos_sinteticos = st.button("Generar datos sintéticos", on_click=onClick, use_container_width=True,)
+        st.button("Generar datos sintéticos", on_click=onClick, use_container_width=True,)
     
     if file is not None:
         
@@ -49,7 +49,7 @@ def main():
             df = pd.read_csv(file)
         elif file.name.endswith('.xlsx'):
             df = pd.read_excel(file)
-        tablas(df)        
+        tablas(df)
     elif "data" in st.session_state:
         tablas(st.session_state["data"])
 

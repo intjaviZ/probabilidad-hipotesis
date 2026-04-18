@@ -21,7 +21,6 @@ def generar_datos(n_filas=100):
     satisfaccion = np.random.uniform(1, 5, size=n_filas)
 
     df = pd.DataFrame({
-        "ID_Cliente": range(1, n_filas + 1),
         "Edad": edades,
         "Gasto_USD": np.round(gastos, 2),
         "Visitas_Mes": visitas,
